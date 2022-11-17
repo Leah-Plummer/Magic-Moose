@@ -17,7 +17,17 @@ void Main()
 
 
 
-    List<string> responses = new List<string>() 
+    if (answer != "")
+    {
+       Answer();
+    }
+
+ }
+
+ void Answer()
+ {
+
+     List<string> responses = new List<string>() 
 {
     "As I see it, yes.",
     "Ask again later.",
@@ -40,38 +50,12 @@ void Main()
     "Yes - definitely.",
     "You may rely on it.",
 };
+    Random i = new Random();
+    int genRand= i.Next(0,19);
 
-
-
-
-
-   
-      Random i = new Random();
-      int genRand= i.Next(0,19);
-   
-
-// foreach (string response in responses)
-// {
-//     Console.WriteLine($"{response}(Y/N): ");
-
-    if (answer != "")
-    {
-        Console.Write($"{responses[genRand]}");
-        //answer = Console.ReadLine().ToLower();
-    }
-
-//      if (answer == "y") 
-//     {
-//         Console.WriteLine($"{yesses[i]}");
-//         i++;
-//     }
-//     else
-//     {
-//         Console.WriteLine($"{nos[i]}") ;
-//         i++;
-//     }
-
-// }
+    Console.Write($"{responses[genRand]}");
+    MooseSays("Ask me another question!"); 
+    string answer = Console.ReadLine().ToLower(); 
  }
 
 void MooseSays(string message)

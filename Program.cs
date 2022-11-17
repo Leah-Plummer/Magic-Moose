@@ -17,9 +17,12 @@ void Main()
 
 
 
-    if (answer != "")
+    while (answer != "")
     {
        Answer();
+       answer = Console.ReadLine().ToLower(); 
+
+
     }
 
  }
@@ -53,9 +56,8 @@ void Main()
     Random i = new Random();
     int genRand= i.Next(0,19);
 
-    Console.Write($"{responses[genRand]}");
-    MooseSays("Ask me another question!"); 
-    string answer = Console.ReadLine().ToLower(); 
+    MooseSays($"{responses[genRand]}");
+    MooseSays("Ask me another question!");  
  }
 
 void MooseSays(string message)
